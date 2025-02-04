@@ -108,19 +108,21 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
-  
 }
 
 .plus-sign {
   font-size: 48px;
   color: #666;
-  line-height: 1;  /* ให้ข้อความไม่ดันขึ้นลงเกินไป */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .image-upload {
   position: absolute;
-  width: 180px;
-  height: 180px;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   opacity: 0;
@@ -135,17 +137,10 @@ body {
 }
 
 .placeholder-text {
-  font-size: 48px;          /* Make the '+' bigger */
-  color: #ffffff;           /* White color for better contrast */
+  font-size: 24px;
+  color: #666;
   font-weight: bold;
-  position: absolute;       /* Position it over the placeholder */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Center it perfectly */
-  z-index: 1;               /* Ensure it's above other elements */
-  pointer-events: none;     /* Allow clicks to pass through to the file input */
 }
-
 
 .info-form {
   display: flex;
