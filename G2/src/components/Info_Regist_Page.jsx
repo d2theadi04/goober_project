@@ -21,17 +21,17 @@ const App = () => {
       <main className="content-container">
         <h1 className="information-title">Information</h1>
         <div className="form-container">
-          <div className="profile-section">
-            <p className="acc">Account Image</p>
-            {/* Circle for profile image */}
-            <div className="profile-image-placeholder">
-              {profileImage ? (
-                <img src={profileImage} alt="Profile" className="profile-image" />
-              ) : (
-                <p className="placeholder-text">+</p>
-              )}
-            </div>
-            {/* Hidden file input */}
+        <div className="profile-section">
+          <p className="acc">Account Image</p>
+
+          {/* วงกลมสำหรับใส่รูป */}
+          <div className="profile-image-placeholder">
+            {profileImage && (
+              <img src={profileImage} alt="Profile" className="profile-image" />
+            )}
+            <p className="placeholder-text">+</p> {/* เครื่องหมาย + อยู่เสมอ */}
+
+            {/* ช่องอัปโหลดรูป */}
             <input
               type="file"
               accept="image/*"
@@ -39,6 +39,7 @@ const App = () => {
               onChange={handleImageUpload}
             />
           </div>
+        </div>
           <form className="info-form">
             <div className="form-row">
               <label>First name</label>

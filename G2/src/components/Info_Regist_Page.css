@@ -108,16 +108,15 @@ body {
   align-items: center;
   position: relative;
   overflow: hidden;
+  cursor: pointer; /* ให้สามารถคลิกได้ */
 }
 
 .plus-sign {
   font-size: 48px;
   color: #666;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  line-height: 1;  /* ให้ข้อความไม่ดันขึ้นลงเกินไป */
 }
+
 
 .image-upload {
   position: absolute;
@@ -125,7 +124,7 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 0;
+  opacity: 0; /* ซ่อน input file */
   cursor: pointer;
 }
 
@@ -137,10 +136,17 @@ body {
 }
 
 .placeholder-text {
-  font-size: 24px;
-  color: #666;
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.8);  /* ให้ + โปร่งแสงนิดหน่อย */
   font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;  /* ให้ + อยู่เหนือรูป */
+  pointer-events: none; /* ให้คลิกทะลุไปถึง input file */
 }
+
 
 .info-form {
   display: flex;
